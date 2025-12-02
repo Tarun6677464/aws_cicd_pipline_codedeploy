@@ -1,18 +1,15 @@
-version: 0.0
-os: linux
-files:
-  - source: /index.html
-    destination: /var/www/html/
-hooks:
-  BeforeInstall:
-    - location: scripts/install_dependencies
-      timeout: 300
-      runas: root
-    - location: scripts/start_server
-      timeout: 300
-      runas: root
-  ApplicationStop:
-    - location: scripts/stop_server
-      timeout: 300
-      runas: root
+version: 0.2
 
+phases:
+  install:
+    commands:
+      - echo "Installing dependencies"
+      - npm install   # if Node.js app
+  build:
+    commands:
+      - echo "Build started"
+      - npm run build # or relevant build commands
+artifacts:
+  files:
+    - '**/*'
+  discard-paths: yes
