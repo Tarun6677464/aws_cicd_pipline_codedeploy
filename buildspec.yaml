@@ -4,12 +4,9 @@ phases:
   install:
     commands:
       - echo "Installing dependencies"
-      - cd frontend          # <- change this to your actual folder
-      - npm install
   build:
     commands:
       - echo "Building app"
-      - npm run build
 artifacts:
   files:
     - '**/*'
