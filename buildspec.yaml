@@ -3,10 +3,15 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo "Installing dependencies"
+      - echo "No dependencies to install for static site"
+
   build:
     commands:
-      - echo "Building app"
+      - echo "No build commands for static files"
+
 artifacts:
   files:
-    - '**/*'
+    - index.html
+    - scripts/**/*
+    - aar_logo_final.png
+    - README.md
