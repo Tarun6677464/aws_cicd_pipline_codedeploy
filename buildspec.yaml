@@ -4,12 +4,12 @@ phases:
   install:
     commands:
       - echo "Installing dependencies"
-      - npm install   # if Node.js app
+      - cd frontend          # <- change this to your actual folder
+      - npm install
   build:
     commands:
-      - echo "Build started"
-      - npm run build # or relevant build commands
+      - echo "Building app"
+      - npm run build
 artifacts:
   files:
     - '**/*'
-  discard-paths: yes
